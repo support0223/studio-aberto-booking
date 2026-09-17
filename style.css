@@ -1,0 +1,282 @@
+:root{
+    --bg:#0A0A0A;
+    --surface:#141414;
+    --surface-2:#1E1E1E;
+    --ink:#F5F5F3;
+    --muted:#8F8F8A;
+    --line:#2C2C2A;
+    --accent:#FFFFFF;
+    --accent-ink:#0A0A0A;
+    --success-bg:#16241A;
+    --success-ink:#8FE0A6;
+    --danger-bg:#2A1616;
+    --danger-ink:#F2A28E;
+    --booked-bg:#1B1B1B;
+    --booked-ink:#6E6E68;
+    --radius:14px;
+    color-scheme: dark;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  #root{
+    max-width:640px;
+    margin:0 auto;
+    padding:env(safe-area-inset-top,0px) 20px calc(env(safe-area-inset-bottom,0px) + 40px);
+  }
+  .hero{ padding-top:32px; padding-bottom:8px; }
+  .brand-logo{ display:flex; justify-content:center; margin-bottom:10px; }
+  .brand-logo img{ display:block; width:88px; height:88px; }
+  .eyebrow{
+    margin:0 0 4px;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:500;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--muted);
+  }
+  h1{
+    margin:0 0 14px;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:900;
+    font-size:clamp(30px,8vw,44px);
+    text-wrap:balance;
+    letter-spacing:.01em;
+    color:var(--ink);
+  }
+  .sub{
+    margin:0 0 10px;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:700;
+    font-size:16px;
+    color:var(--ink);
+  }
+  .lead{ margin:0 0 10px; color:var(--muted); }
+  .banner{
+    margin:0 0 20px;
+    padding:14px 16px;
+    border-radius:10px;
+    font-size:14.5px;
+    font-weight:500;
+  }
+  .banner-success{ background:var(--success-bg); color:var(--success-ink); }
+  .banner-error{ background:var(--danger-bg); color:var(--danger-ink); }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  fieldset.field{ border:none; margin:0; padding:0; }
+  legend, label{
+    font-weight:700;
+    font-size:14.5px;
+  }
+  .req{ color:var(--danger-ink); font-weight:700; }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea{
+    width:100%;
+    font:inherit;
+    color:var(--ink);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:11px 13px;
+    color-scheme: dark;
+  }
+  input[type="text"]:focus-visible, input[type="email"]:focus-visible, input[type="tel"]:focus-visible, input[type="date"]:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:1px;
+  }
+  textarea{ resize:vertical; min-height:78px; }
+  .menu-options, .time-options{ display:flex; flex-direction:column; gap:8px; }
+  .menu-option, .time-option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 13px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    font-weight:500;
+    cursor:pointer;
+  }
+  .menu-option:has(input:checked), .time-option:has(input:checked){
+    border-color:var(--accent);
+    background:var(--surface-2);
+  }
+  .time-option.is-booked{
+    color:var(--booked-ink);
+    background:var(--booked-bg);
+    cursor:not-allowed;
+  }
+  .time-option .badge{
+    margin-left:auto;
+    font-size:12px;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:999px;
+    background:var(--booked-ink);
+    color:var(--booked-bg);
+    white-space:nowrap;
+  }
+  .time-option .badge-open{
+    background:var(--surface-2);
+    color:var(--accent);
+    border:1px solid var(--accent);
+  }
+  .hint{ margin:0; color:var(--muted); font-size:13.5px; font-weight:400; }
+  .submit-btn{
+    align-self:flex-start;
+    font:inherit;
+    font-weight:700;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    letter-spacing:.02em;
+    color:var(--accent-ink);
+    background:var(--accent);
+    border:none;
+    border-radius:999px;
+    padding:13px 32px;
+    cursor:pointer;
+  }
+  .submit-btn:disabled{ opacity:.6; cursor:not-allowed; }
+  .submit-btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+  .panel{
+    margin:0 0 20px;
+    padding:20px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+  }
+  .panel h2{
+    margin:0 0 14px;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:900;
+    font-size:20px;
+  }
+  .summary-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:8px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .summary-row:last-of-type{ border-bottom:none; }
+  .summary-row .k{ color:var(--muted); }
+  .summary-row .v{ font-weight:700; text-align:right; }
+  .btn-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+  .btn-secondary{
+    font:inherit;
+    font-weight:700;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    color:var(--ink);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:11px 22px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .btn-secondary:disabled{ opacity:.6; cursor:not-allowed; }
+  .btn-danger{
+    font:inherit;
+    font-weight:700;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    color:var(--danger-ink);
+    background:var(--danger-bg);
+    border:1px solid var(--danger-ink);
+    border-radius:999px;
+    padding:11px 22px;
+    cursor:pointer;
+  }
+  .btn-danger:disabled{ opacity:.6; cursor:not-allowed; }
+  .link-row{ margin-top:14px; font-size:13px; color:var(--muted); }
+  .link-btn{
+    font:inherit;
+    font-size:inherit;
+    color:var(--ink);
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    text-decoration:underline;
+  }
+  .copy-field{
+    width:100%;
+    font:inherit;
+    font-size:12.5px;
+    color:var(--muted);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:9px 11px;
+    margin-top:6px;
+  }
+  .admin-list{ display:flex; flex-direction:column; gap:12px; }
+  .admin-item{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .admin-item .row1{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+    font-weight:700;
+  }
+  .admin-item .meta{ color:var(--muted); font-size:13.5px; }
+  .admin-item .actions{ margin-top:8px; }
+  .admin-empty{ color:var(--muted); padding:24px 0; text-align:center; }
+  .back-link{ color:var(--muted); font-size:13.5px; }
+  .cal-header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+  .cal-nav-btn{
+    font:inherit; font-weight:700;
+    background:var(--surface-2); border:1px solid var(--line); color:var(--ink);
+    border-radius:8px; padding:6px 14px; cursor:pointer;
+  }
+  .cal-title{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:900; font-size:16px;
+  }
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:4px; margin-bottom:12px; }
+  .cal-dow{ text-align:center; font-size:11px; color:var(--muted); padding-bottom:4px; }
+  .cal-day{
+    aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    border-radius:8px; border:1px solid var(--line); background:var(--surface);
+    font-size:12px; color:var(--ink);
+  }
+  .cal-day.empty{ border-color:transparent; background:transparent; }
+  .cal-day.has-res{ cursor:pointer; border-color:var(--accent); }
+  .cal-day.selected{ background:var(--accent); color:var(--accent-ink); }
+  .cal-day .num{ font-weight:700; }
+  .cal-day .cnt{ font-size:10px; color:var(--muted); }
+  .cal-day.selected .cnt{ color:var(--accent-ink); }
+  .cal-day.today{ box-shadow:inset 0 0 0 1px var(--ink); }
+  .cal-filter-note{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; font-size:13.5px; color:var(--muted); }
+  .cal-filter-note button{
+    font:inherit; font-weight:700; color:var(--ink); background:none; border:1px solid var(--line);
+    border-radius:999px; padding:4px 12px; cursor:pointer;
+  }
+  .staff-link-row{ text-align:center; margin-top:36px; }
+  .staff-link-btn{
+    font:inherit; font-size:11px; color:var(--line); background:none; border:none; cursor:pointer; padding:6px;
+  }
